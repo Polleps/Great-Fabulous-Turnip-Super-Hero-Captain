@@ -3,7 +3,7 @@ __author__ = 'Brent'
 import tkinter as tk
 from tkinter import *
 import gifPlayer
-# import itertools as it
+
 LARGE_FONT= ("Verdana", 12)
 
 class SWGapp(tk.Tk):
@@ -110,7 +110,7 @@ class HighScore(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         label = tk.Label(self, text="HighScore!!!", font=LARGE_FONT)
-        label.pack(pady=10,padx=10)
+        label.pack(pady=10, padx=10)
 
         button1 = tk.Button(self, text="Back to Home",
                             command=lambda: controller.show_frame(StartPage))

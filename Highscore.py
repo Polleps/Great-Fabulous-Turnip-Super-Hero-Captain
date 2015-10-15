@@ -18,9 +18,12 @@ class Highscore:
         return st
 
     def save(self):
+        stScore = str(self.Score)
+        if len(stScore) == 1:
+            stScore = "0" + stScore
         with open('highscores.csv', 'a+', newline='') as csvfile:
             winnaars = csv.writer(csvfile, delimiter=";")
-            winnaars.writerow([self.TimeStamp, self.Score, self.UserName])
+            winnaars.writerow([self.TimeStamp, stScore, self.UserName])
 
 def loadHighscore(sortType = "None"):
     f = open('highscores.csv', 'r')

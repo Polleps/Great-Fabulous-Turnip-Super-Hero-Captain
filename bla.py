@@ -1,7 +1,7 @@
 __author__ = 'Polle'
 import csv
 import random as ran
-import  time
+import time
 import Highscore
 import Hero
 import Score

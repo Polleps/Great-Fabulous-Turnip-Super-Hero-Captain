@@ -1,11 +1,9 @@
 __author__ = 'Turnip'
 
 import tkinter as tk
-import time
 from tkinter import *
 import random as ran
 import  time
-import Highscore
 import Hero
 import Score
 import gifPlayer
@@ -159,15 +157,8 @@ class StartGame(tk.Frame):
         name = USERNAME
         SCORE.startGame()
 
-        #print("Hint 1:")
 
         ran.seed(time.gmtime())
-
-        #print(random_hero)
-        #print(random_hero.hint())
-
-        #print("The Hero was: ")
-        #print(random_hero)
 
     def showLabel(self,tk, score, label):
         if self.counter is 0:
@@ -273,7 +264,7 @@ class WinScreen(tk.Frame):
                         "Joris Boers.....................1657009"+"\n")
         label2.pack()
         button1=tk.Button(self,text="Exit",
-                                  command=lambda: self.destroy())
+                                  command=lambda: controller.show_frame(Exit))
         button1.pack(side=BOTTOM,fill=X)
 
 

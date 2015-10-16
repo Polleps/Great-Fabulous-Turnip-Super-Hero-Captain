@@ -2,16 +2,18 @@ __author__ = 'Polle'
 import Highscore
 class Score:
     CurrentScore = 25
+    Time = 0
     GAMESTATE = "NOTSTARTED"
     def __init__(self):
         pass
 
-    def aftrek(self, hoeveel):
+    def aftrek(self, hoeveel, label):
         self.CurrentScore -= hoeveel
         if self.CurrentScore <= 0:
             self.CurrentScore = 0
             self.gameOver(self)
-        print("Score: " + str(self.CurrentScore))
+        #print("Score: " + str(self.CurrentScore))
+        label.set(str(self.CurrentScore))
 
     def checkForGameOver(self):
         if self <= 0:
@@ -27,10 +29,8 @@ class Score:
 
     def winGame(self, score, name):
         self.GAMESTATE = "WIN"
-        highscore = Highscore.Highscore(name, score.getScore())
+        highscore = Highscore.Highscore(name, score.getScore(), self.Time)
         highscore.save()
-        print("You have won!\nYour score was: " + str(score.getScore()))
 
     def gameOver(self, score):
         self.GAMESTATE = "GAMEOVER"
-        print("Game over!")
